@@ -8,7 +8,10 @@ from contextlib import asynccontextmanager
 
 import httpx
 import pytest
-from mcp.client.streamable_http import streamablehttp_client
+
+streamablehttp_client = pytest.importorskip(
+    "mcp.client.streamable_http"
+).streamablehttp_client
 
 from aeiva.tool.registry import ToolRegistry
 
